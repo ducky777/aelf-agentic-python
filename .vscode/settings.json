@@ -1,0 +1,16 @@
+{
+    "python.venvPath": "D:/Github/theforge-backend/backend.venv",
+    "editor.formatOnSave": true,
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always"
+      }
+    },
+    "ruff.organizeImports": true,
+    "ruff.fixAll": true,
+    "ruff.lint.run": "onSave",
+    "python.analysis.extraPaths": ["./knowledge_forge"]
+  }
