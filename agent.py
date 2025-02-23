@@ -456,7 +456,7 @@ if __name__ == "__main__":
     agent = ResearchAgent()
     final_report = agent.start("Is Solana a good investment?")
 
-    with open("final_report.md", "w") as f:
+    with open("final_report.md", "w", encoding="utf-8") as f:
         f.write(final_report)
 
     print("\n\n=========== FINAL REPORT ===========")
