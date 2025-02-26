@@ -426,17 +426,11 @@ class ResearchAgent:
             if "<report>" in response_text:
                 # For final report, show it differently
                 print(f'    {query_id} --> {response_id}{{"Final Report"}}')
-            else:
-                # Extract query from response for intermediate steps
-                next_query = extract_query_content(response_text)
-
-                if next_query:
-                    next_query = (
-                        next_query[:50] + "..." if len(next_query) > 50 else next_query
-                    )
-                    print(
-                        f'    {query_id} --> {response_id}["Search for: {next_query}"]'
-                    )
+            elif next_query := extract_query_content(response_text):
+                next_query = (
+                    f"{next_query[:50]}..." if len(next_query) > 50 else next_query
+                )
+                print(f'    {query_id} --> {response_id}["Search for: {next_query}"]')
 
             # Add search results if they exist
             if step["search_results"]:
